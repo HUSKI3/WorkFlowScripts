@@ -1,0 +1,12 @@
+  for i in 50 
+  do
+    bspc node -z left 50 0
+    bspc node -z top 0 50
+    bspc node -z right -50 0
+    bspc node -z bottom 0 -50
+  done
+  bspc node -z left -550 0
+  bspc node -z right 550 0
+  bspc node -z top 0 -575
+  bspc node -z bottom 0 575
+  tmux new-session "nnn" \; split-window -v \; send-keys "clear" Enter \; split-window -h \; send-keys "htop" Enter \; select-pane -t 0 \; resize-pane -D 15 \; attach 
